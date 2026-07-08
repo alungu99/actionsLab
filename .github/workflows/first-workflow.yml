@@ -5,7 +5,12 @@ on:
     paths-ignore: [.github/**]
   schedule:
     - cron: "1,31 8-18 * * 1-5"
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true
 
 jobs:
   First-Job:
